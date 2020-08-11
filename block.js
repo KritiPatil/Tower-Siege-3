@@ -14,11 +14,13 @@ class Block{
         this.color = color;
         this.visibilty = 255;
       }
+
       score() {
-        if(this.visibilty<3 && this.visibilty >= 105) {
+        if(this.visibilty <3 && this.visibilty >- 305) {
           score++;
         }
       }
+
       show(){
         var angle = this.body.angle;
 

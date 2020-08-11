@@ -8,7 +8,8 @@ var polygon, lan;
 var ground, p1, p2;
 var a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16;
 var b1, b2, b3, b4, b5, b6, b7, b8, b9;
-var engine, world, score;
+var engine, world;
+var score = 0;
 
 function setup() {
   createCanvas(800,400);
@@ -61,8 +62,6 @@ function setup() {
   World.add(world, polygon);
   lan = new Launcher(this.polygon, {x: 100, y: 200});
 
-  score = 0;
-  var gameState = "onSling";
 
 }
 
@@ -136,7 +135,7 @@ function draw() {
 
   drawSprites();
 
-  text ("SCORE : "+score, 750, 40);
+  text ("Score : "+score, 750, 40);
 }
 
 function mouseDragged(){
@@ -149,8 +148,7 @@ function mouseReleased(){
 }
 
 function keyPressed() {
-  if(keyCode === "SPACE") {
+  if(keyCode === 32) {
      lan.attach(this.polygon);
-     console.log(polygon);
   }
 }
